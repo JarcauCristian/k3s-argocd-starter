@@ -81,7 +81,6 @@ ingress:
     originRequest:
       noTLSVerify: true
       originServerName: enact-cluster.sedimark.work
-      connectTimeout: 10s
       logHeaders: true
       headers:
         - name: CF-Connecting-IP
