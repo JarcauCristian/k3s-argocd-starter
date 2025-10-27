@@ -80,6 +80,7 @@ ingress:
     service: https://kubernetes.default.svc.cluster.local:443
     originRequest:
       noTLSVerify: true
+      originServerName: kubernetes.default.svc.cluster.local
       connectTimeout: 10s
       logHeaders: true
       headers:
