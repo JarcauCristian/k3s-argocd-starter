@@ -28,3 +28,12 @@ spec:
       allowedRoutes:
         namespaces:
           from: All
+    - name: api-tls
+      protocol: TLS
+      port: 6443
+      hostname: "enact-cluster.sedimark.work"
+      tls:
+        mode: Passthrough
+      allowedRoutes:
+        namespaces:
+          from: All
