@@ -16,6 +16,8 @@ spec:
       labels:
         app: cloudflared
     spec:
+      nodeSelector:
+        cloudflared: allowed
       containers:
         - name: cloudflared
           image: cloudflare/cloudflared:2025.1.0 # renovate: docker=cloudflare/cloudflared
