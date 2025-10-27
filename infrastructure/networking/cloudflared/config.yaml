@@ -77,7 +77,7 @@ ingress:
         - name: Accept-Language
         - name: User-Agent
   - hostname: enact-cluster.sedimark.work
-    service: https://kubernetes.default.svc.cluster.local:443
+    service: http://kubernetes.default.svc.cluster.local:443
     originRequest:
       noTLSVerify: true
       originServerName: kubernetes.default.svc.cluster.local
