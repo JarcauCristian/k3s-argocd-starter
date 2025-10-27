@@ -27,7 +27,7 @@ ingress:
         - name: Accept-Language
         - name: User-Agent
   - hostname: enact-cluster.sedimark.work
-    service: tcp://cilium-gateway-gateway-external.gateway.svc.cluster.local:6443
+    service: kubernetes
     originRequest:
       noTLSVerify: true
       logHeaders: true
