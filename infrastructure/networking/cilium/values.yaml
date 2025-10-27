@@ -52,7 +52,9 @@ gatewayAPI:
   # Enable Application-Layer Protocol Negotiation (ALPN) which will attempt HTTP/2, then HTTP 1.1.
   # Services that wish to use HTTP/2 must indicate that via their appProtocol (GEP-1911).
   enableAlpn: false
-envoy:
+envoy: 
+  nodeSelector:
+    cilium-envoy: allowed
   securityContext:
     capabilities:
       keepCapNetBindService: true
