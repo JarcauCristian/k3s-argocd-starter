@@ -26,6 +26,26 @@ ingress:
         - name: X-Forwarded-For
         - name: Accept-Language
         - name: User-Agent
+  - hostname: enact-cluster.sedimark.work
+    service: https://cilium-gateway-gateway-external.gateway.svc.cluster.local:6443
+    originRequest:
+      noTLSVerify: true
+      logHeaders: true
+      headers:
+        - name: CF-Connecting-IP
+        - name: X-Real-IP
+        - name: CF-IPCountry
+        - name: CF-Ray
+        - name: CF-Visitor
+        - name: CF-Device-Type
+        - name: CF-IPCITY
+        - name: CF-IPCONTINENT
+        - name: CF-IPLATITUDE
+        - name: CF-IPLONGITUDE
+        - name: CF-IPREGION
+        - name: X-Forwarded-For
+        - name: Accept-Language
+        - name: User-Agent
   - hostname: "*.sedimark.work"
     service: https://cilium-gateway-gateway-external.gateway.svc.cluster.local:443
     originRequest:
@@ -60,26 +80,6 @@ ingress:
     originRequest:
       noTLSVerify: true
       originServerName: sedimark.work
-      logHeaders: true
-      headers:
-        - name: CF-Connecting-IP
-        - name: X-Real-IP
-        - name: CF-IPCountry
-        - name: CF-Ray
-        - name: CF-Visitor
-        - name: CF-Device-Type
-        - name: CF-IPCITY
-        - name: CF-IPCONTINENT
-        - name: CF-IPLATITUDE
-        - name: CF-IPLONGITUDE
-        - name: CF-IPREGION
-        - name: X-Forwarded-For
-        - name: Accept-Language
-        - name: User-Agent
-  - hostname: enact-cluster.sedimark.work
-    service: https://cilium-gateway-gateway-external.gateway.svc.cluster.local:6443
-    originRequest:
-      noTLSVerify: true
       logHeaders: true
       headers:
         - name: CF-Connecting-IP
