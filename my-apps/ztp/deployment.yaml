@@ -19,7 +19,8 @@ spec:
         fsGroup: 1000
       containers:
       - name: ztp
-        image: scr4pp/ztp:arm64-1
+        image: scr4pp/ztp:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
         env:
