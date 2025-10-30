@@ -30,5 +30,5 @@ spec:
           mountPath: "/data/db"
       volumes:
       - name: ztp-db-data
-        presistentVolumeClaim:
+        persistentVolumeClaim:
           claimName: ztp-db-pvc
