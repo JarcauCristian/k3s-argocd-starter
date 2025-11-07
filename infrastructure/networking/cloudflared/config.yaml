@@ -173,7 +173,7 @@ ingress:
         - name: Accept-Language
         - name: User-Agent
   - hostname: "innovalia-uc2-api.sedimark.work"
-    service: https://cilium-gateway-innovalia-external.gateway.svc.cluster.local:443
+    service: https://cilium-gateway-innovalia-external.gateway.svc.cluster.local:80
     originRequest:
       noTLSVerify: true
       originServerName: "innovalia-uc2-api.sedimark.work"
@@ -202,7 +202,7 @@ ingress:
         - name: CF-Challenge
         - name: CF-Bot-Management-Tag
   - hostname: "innovalia-uc2.sedimark.work"
-    service: https://cilium-gateway-innovalia-external.gateway.svc.cluster.local:443
+    service: https://cilium-gateway-innovalia-external.gateway.svc.cluster.local:80
     originRequest:
       noTLSVerify: true
       originServerName: "innovalia-uc2.sedimark.work"
@@ -231,7 +231,7 @@ ingress:
         - name: CF-Challenge
         - name: CF-Bot-Management-Tag
   - hostname: "innovalia-uc2-panel.sedimark.work"
-    service: https://cilium-gateway-innovalia-external.gateway.svc.cluster.local:443
+    service: https://cilium-gateway-innovalia-external.gateway.svc.cluster.local:80
     originRequest:
       noTLSVerify: true
       originServerName: "innovalia-uc2-panel.sedimark.work"
@@ -260,10 +260,10 @@ ingress:
         - name: CF-Challenge
         - name: CF-Bot-Management-Tag
   - hostname: "innovalia-uc2-flower.sedimark.work"
-    service: https://cilium-gateway-innovalia-external.gateway.svc.cluster.local:443
+    service: https://cilium-gateway-innovalia-external.gateway.svc.cluster.local:80
     originRequest:
       noTLSVerify: true
-      originServerName: "innovalia-uc2-api.sedimark.work"
+      originServerName: "innovalia-uc2-flower.sedimark.work"
       logHeaders: true
       headers:
         - name: CF-Connecting-IP
