@@ -123,54 +123,6 @@ ingress:
   #       - name: Accept-Language
   #       - name: User-Agent
   - hostname: "*.sedimark.work"
-    service: https://cilium-gateway-innovalia-external.gateway.svc.cluster.local:443
-    originRequest:
-      noTLSVerify: true
-      logHeaders: true
-      headers:
-        - name: CF-Connecting-IP
-        - name: X-Real-IP
-        - name: CF-IPCountry
-        - name: CF-Ray
-        - name: CF-Visitor
-        - name: CF-Device-Type
-        - name: CF-IPCITY
-        - name: CF-IPCONTINENT
-        - name: CF-IPLATITUDE
-        - name: CF-IPLONGITUDE
-        - name: CF-IPREGION
-        - name: X-Forwarded-For
-        - name: Accept-Language
-        - name: User-Agent
-        - name: True-Client-IP
-        - name: CF-IPCountry
-        - name: CF-RAY
-        - name: CF-Worker
-        - name: CF-Client-Bot
-        - name: CF-Bot-Score
-        - name: CF-Challenge
-        - name: CF-Bot-Management-Tag
-  - hostname: sedimark.work
-    service: https://cilium-gateway-innovalia-external.gateway.svc.cluster.local:443
-    originRequest:
-      noTLSVerify: true
-      logHeaders: true
-      headers:
-        - name: CF-Connecting-IP
-        - name: X-Real-IP
-        - name: CF-IPCountry
-        - name: CF-Ray
-        - name: CF-Visitor
-        - name: CF-Device-Type
-        - name: CF-IPCITY
-        - name: CF-IPCONTINENT
-        - name: CF-IPLATITUDE
-        - name: CF-IPLONGITUDE
-        - name: CF-IPREGION
-        - name: X-Forwarded-For
-        - name: Accept-Language
-        - name: User-Agent
-  - hostname: "*.sedimark.work"
     service: https://cilium-gateway-gateway-external.gateway.svc.cluster.local:443
     originRequest:
       noTLSVerify: true
@@ -220,4 +172,33 @@ ingress:
         - name: X-Forwarded-For
         - name: Accept-Language
         - name: User-Agent
+  - hostname: "innovalia*.sedimark.work"
+    service: https://cilium-gateway-innovalia-external.gateway.svc.cluster.local:443
+    originRequest:
+      noTLSVerify: true
+      originServerName: "innovalia*.sedimark.work"
+      logHeaders: true
+      headers:
+        - name: CF-Connecting-IP
+        - name: X-Real-IP
+        - name: CF-IPCountry
+        - name: CF-Ray
+        - name: CF-Visitor
+        - name: CF-Device-Type
+        - name: CF-IPCITY
+        - name: CF-IPCONTINENT
+        - name: CF-IPLATITUDE
+        - name: CF-IPLONGITUDE
+        - name: CF-IPREGION
+        - name: X-Forwarded-For
+        - name: Accept-Language
+        - name: User-Agent
+        - name: True-Client-IP
+        - name: CF-IPCountry
+        - name: CF-RAY
+        - name: CF-Worker
+        - name: CF-Client-Bot
+        - name: CF-Bot-Score
+        - name: CF-Challenge
+        - name: CF-Bot-Management-Tag
   - service: http_status:404
