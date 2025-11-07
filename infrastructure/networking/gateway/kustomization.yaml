@@ -8,6 +8,7 @@ resources:
   - ns.yaml
   - gw-external.yaml
   - gw-internal.yaml
+  - gw-innovalia.yaml
   - cert-vanillax.yaml
 
 
