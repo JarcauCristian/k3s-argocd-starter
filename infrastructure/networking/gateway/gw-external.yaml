@@ -16,12 +16,6 @@ spec:
       allowedRoutes:
         namespaces:
           from: All
-      rules:
-      - filters:
-          - type: RequestRedirect
-            requestRedirect:
-              scheme: https
-              statusCode: 301
     - name: https
       protocol: HTTPS
       port: 443
