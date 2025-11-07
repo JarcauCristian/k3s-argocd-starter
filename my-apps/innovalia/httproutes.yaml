@@ -5,9 +5,9 @@ metadata:
   namespace: innovalia
 spec:
   parentRefs:
-  - name: gateway-external
+  - name: innovalia-external
     namespace: gateway
-    sectionName: http
+    sectionName: https
   hostnames:
   - innovalia-uc2-api.sedimark.work
   rules:
@@ -24,9 +24,9 @@ metadata:
   namespace: innovalia
 spec:
   parentRefs:
-  - name: gateway-external
+  - name: innovalia-external
     namespace: gateway
-    sectionName: http
+    sectionName: https
   hostnames:
   - innovalia-uc2.sedimark.work
   rules:
@@ -43,9 +43,9 @@ metadata:
   namespace: innovalia
 spec:
   parentRefs:
-  - name: gateway-external
+  - name: innovalia-external
     namespace: gateway
-    sectionName: http
+    sectionName: https
   hostnames:
   - innovalia-uc2-panel.sedimark.work
   rules:
@@ -62,9 +62,9 @@ metadata:
   namespace: innovalia
 spec:
   parentRefs:
-  - name: gateway-external
+  - name: innovalia-external
     namespace: gateway
-    sectionName: http
+    sectionName: https
   hostnames:
   - innovalia-uc2-flower.sedimark.work
   rules:

@@ -1,0 +1,36 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: innovalia-external
+  namespace: gateway
+spec:
+  addresses:
+  - type: IPAddress
+    value: 192.168.8.23
+  gatewayClassName: cilium
+  listeners:
+    - name: http
+      protocol: HTTP
+      port: 80
+      hostname: "*.sedimark.work"
+      allowedRoutes:
+        namespaces:
+          from: Selector
+          selector:
+            matchLabels:
+              project: "enact-uc2"
+    - name: https
+      protocol: HTTPS
+      port: 443
+      hostname: "*.sedimark.work"
+      tls:
+        certificateRefs:
+          - name: cert-sedimark
+            kind: Secret
+            group: "" # required
+      allowedRoutes:
+        namespaces:
+          from: Selector
+          selector:
+            matchLabels:
+              project: "enact-uc2"
