@@ -49,7 +49,63 @@ ingress:
   - hostname: innovalia-uc2-api.sedimark.work
     service: http://api.innovalia.svc.cluster.local:8000
     originRequest:
-      # Add header logging with log-headers flag
+      logHeaders: true
+      headers:
+        - name: CF-Connecting-IP
+        - name: X-Real-IP
+        - name: CF-IPCountry
+        - name: CF-Ray
+        - name: CF-Visitor
+        - name: CF-Device-Type
+        - name: CF-IPCITY
+        - name: CF-IPCONTINENT
+        - name: CF-IPLATITUDE
+        - name: CF-IPLONGITUDE
+        - name: CF-IPREGION
+        - name: X-Forwarded-For
+        - name: Accept-Language
+        - name: User-Agent
+  - hostname: innovalia-uc2-panel.sedimark.work
+    service: http://control-panel.innovalia.svc.cluster.local:80
+    originRequest:
+      logHeaders: true
+      headers:
+        - name: CF-Connecting-IP
+        - name: X-Real-IP
+        - name: CF-IPCountry
+        - name: CF-Ray
+        - name: CF-Visitor
+        - name: CF-Device-Type
+        - name: CF-IPCITY
+        - name: CF-IPCONTINENT
+        - name: CF-IPLATITUDE
+        - name: CF-IPLONGITUDE
+        - name: CF-IPREGION
+        - name: X-Forwarded-For
+        - name: Accept-Language
+        - name: User-Agent
+  - hostname: innovalia-uc2.sedimark.work
+    service: http://frontend.innovalia.svc.cluster.local:80
+    originRequest:
+      logHeaders: true
+      headers:
+        - name: CF-Connecting-IP
+        - name: X-Real-IP
+        - name: CF-IPCountry
+        - name: CF-Ray
+        - name: CF-Visitor
+        - name: CF-Device-Type
+        - name: CF-IPCITY
+        - name: CF-IPCONTINENT
+        - name: CF-IPLATITUDE
+        - name: CF-IPLONGITUDE
+        - name: CF-IPREGION
+        - name: X-Forwarded-For
+        - name: Accept-Language
+        - name: User-Agent
+  - hostname: innovalia-uc2-flower.sedimark.work
+    service: http://flower.innovalia.svc.cluster.local:80
+    originRequest:
       logHeaders: true
       headers:
         - name: CF-Connecting-IP
