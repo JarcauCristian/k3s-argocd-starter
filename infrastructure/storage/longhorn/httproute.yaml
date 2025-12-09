@@ -5,7 +5,7 @@ metadata:
   namespace: longhorn-system
 spec:
   parentRefs:
-    - name: gateway-internal # Assuming you have an internal gateway, adjust if needed
+    - name: gateway-external # Assuming you have an internal gateway, adjust if needed
       namespace: gateway # Assuming your gateway is in the 'gateway' namespace
   hostnames:
     - "longhorn.sedimark.work" # You can change this hostname

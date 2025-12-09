@@ -18,6 +18,15 @@ crds:
   keep: false
 
 controller:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - rk1-node1
   resources:
     requests:
       cpu: 100m
@@ -27,6 +36,15 @@ controller:
       memory: 2Gi
 
 dex:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - rk1-node1
   resources:
     requests:
       cpu: 20m
@@ -36,6 +54,15 @@ dex:
       memory: 256Mi
 
 redis:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - rk1-node1
   resources:
     requests:
       cpu: 100m
@@ -45,6 +72,15 @@ redis:
       memory: 128Mi
 
 server:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - rk1-node1
   resources:
     requests:
       cpu: 50m
@@ -54,6 +90,15 @@ server:
       memory: 256Mi
 
 repoServer:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - rk1-node1
   containerSecurityContext:
     readOnlyRootFilesystem: true
   volumes:
@@ -93,6 +138,15 @@ repoServer:
           name: cmp-tmp
 
 applicationSet:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: In
+            values:
+            - rk1-node1
   resources:
     requests:
       cpu: 50m
