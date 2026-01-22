@@ -1,6 +1,6 @@
 cluster:
-  name: rpis
-  id: 1
+  name: siemens-cluster
+  id: 100
 kubeProxyReplacement: false
 k8sServiceHost: 192.168.8.55
 k8sServicePort: 6443
