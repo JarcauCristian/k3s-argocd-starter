@@ -9,7 +9,7 @@ spec:
       namespace: gateway
       sectionName: https
   hostnames:
-  - ztp.sedimark.work
+  - ztp.enact.sedimark.work
   rules:
   - matches:
     - path:
