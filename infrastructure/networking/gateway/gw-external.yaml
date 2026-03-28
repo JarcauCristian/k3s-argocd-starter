@@ -37,3 +37,11 @@ spec:
       allowedRoutes:
         namespaces:
           from: All
+    - name: passthrough
+      port: 8443
+      protocol: TLS
+      tls:
+        mode: Passthrough
+      allowedRoutes:
+        namespaces:
+          from: All
